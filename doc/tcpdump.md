@@ -20,12 +20,12 @@ When running support-toolkit, must use parameter `net=host` to see host level pa
     bash
 ```
 
-Run tcpdump on the expected network interface, for example `eth0` in the command below.
+Run tcpdump on the expected network interface, for example `eth0` in the command below. Capture the output to a file in the volume.
 ```bash
 # tcpdump -U -s 0 -i eth0 not port 22222 -w /dump/dumpfile.cap
 ```
 
-After exiting the container, you can find the dump file in `/mnt/data/docker/volumes/supkit/_data`. If this is a customer device, remove the volume.
+After exiting the container, you can find the capture file in `/mnt/data/docker/volumes/supkit/_data`. If this is a customer device, remove the volume.
 ```bash
 # balena volume rm supkit
 ```
