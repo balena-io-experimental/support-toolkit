@@ -17,7 +17,8 @@ When running support-toolkit, must use parameter `net=host` to see host level pa
     -v supkit:/dump \
     -it \
     kb2ma/support-toolkit \
-    bash```
+    bash
+```
 
 Run tcpdump on the expected network interface, for example `eth0` in the command below.
 ```bash
