@@ -10,14 +10,9 @@ supkit
 
 When running support-toolkit, must use parameter `net=host` to see host level packets, and must specify volume.
 ```bash
-# balena run \
-    --rm \
-    --name supkit \
-    --net=host \
-    -v supkit:/data \
-    -it \
-    kb2ma/support-toolkit \
-    bash
+# balena run --rm --name supkit -it \
+    --net=host -v supkit:/data \
+    kb2ma/support-toolkit
 ```
 
 Run tcpdump on the expected network interface, for example `eth0` in the command below. Capture the output to a file in the volume.

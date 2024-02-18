@@ -7,17 +7,24 @@ A tool name link is to local docs on how to run it in a support context for a ba
 | Tool | Description |
 | ---- | ----------- |
 | bash | Provides shell for the container |
-| [lshw](doc/lshw.md) | Hardware lister |
+| [lshw](doc/lshw.md) | List hardware on device |
 | nano | Text editor with a command bar |
-| [tcpdump](doc/tcpdump.md) | Dump traffic on a network |
+| [tcpdump](doc/tcpdump.md) | Collect network packets |
 
 ## Running
 
 A particular tool may require host networking or privileged operation. See the tool doc link above for specifics.
 
+To run the toolkit interactively from a bash shell:
 ```bash
-# balena run --rm --name supkit -it kb2ma/support-toolkit bash
+# balena run --rm --name supkit -it kb2ma/support-toolkit
 ```
+
+To execute a command directly, for example `lshw`:
+```bash
+# balena run --rm kb2ma/support-toolkit -c "lshw -short"
+```
+
 
 ## Development
 

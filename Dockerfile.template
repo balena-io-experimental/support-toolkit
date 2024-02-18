@@ -8,3 +8,5 @@ RUN apk add --no-cache \
 
 WORKDIR /app
 COPY doc doc
+
+ENTRYPOINT ["bash"]
