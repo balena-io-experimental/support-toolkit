@@ -1,12 +1,9 @@
 FROM alpine:latest
 
-RUN apk add --no-cache \
-    bash \
-    lshw \
-    nano \
-    tcpdump
+RUN apk add --no-cache bash lshw nano nmap-ncat tcpdump
 
 WORKDIR /app
 COPY doc doc
+COPY src src
 
 ENTRYPOINT ["bash"]

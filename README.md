@@ -9,7 +9,8 @@ A tool name link is to local docs on how to run it in a support context for a ba
 | bash | Provides shell for the container |
 | [lshw](doc/lshw.md) | List hardware on device |
 | nano | Text editor with a command bar |
-| [tcpdump](doc/tcpdump.md) | Collect network packets |
+| [ncat](doc/ncat.md) | Networking tool, including simple web server |
+| [tcpdump](doc/tcpdump.md) | Collect network packets for Wireshark |
 
 ## Running
 
