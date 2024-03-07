@@ -12,7 +12,7 @@ function build_and_push_image () {
 
   sed "s/%%BALENA_MACHINE_NAME%%/$BALENA_MACHINE_NAME/g" ./Dockerfile.template > ./Dockerfile.$BALENA_MACHINE_NAME
   sed -i.bak "s/%%BALENA_ARCH%%/$BALENA_ARCH/g" ./Dockerfile.$BALENA_MACHINE_NAME && rm ./Dockerfile.$BALENA_MACHINE_NAME.bak
-  docker buildx build -t $DOCKER_REPO/$BLOCK_NAME:$BALENA_MACHINE_NAME --load --platform $DOCKER_ARCH --file Dockerfile.$BALENA_MACHINE_NAME .
+  docker buildx build --progress=plain -t $DOCKER_REPO/$BLOCK_NAME:$BALENA_MACHINE_NAME --load --platform $DOCKER_ARCH --file Dockerfile.$BALENA_MACHINE_NAME .
 
   # No need to push to a local repository
   echo "Publishing..."
@@ -22,8 +22,6 @@ function build_and_push_image () {
   rm Dockerfile.$BALENA_MACHINE_NAME
 }
 
-# Commands include "--insecure" flag because we assume DOCKER_REPO refers to
-# a registry on this workstation.
 function create_and_push_manifest() {
   local DOCKER_REPO=$1
   docker manifest create $DOCKER_REPO/$BLOCK_NAME:latest \
