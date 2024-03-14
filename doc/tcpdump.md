@@ -20,19 +20,23 @@ Run tcpdump on the expected network interface, like 'eth0', or `any` for all int
 # tcpdump -U -s 0 -i any not port 22222 -w /data/dumpfile.cap
 ```
 
-After exiting the container, you can find the capture file in `/mnt/data/docker/volumes/supkit/_data`. If you use `balena ssh` to run this command on a device, export the capture file to ASCII via base64 encoding, like below. Scrape the output from your terminal and save it to a file.
+After exiting the container, you can find the capture file in `/mnt/data/docker/volumes/supkit/_data`. If you use `balena ssh` to run this command on a device, use `balena tunnel` to collect the file, like in the example below.
 
+First open a new terminal, and enter this command.
 ```bash
-# base64 dumpfile.cap >dumpfile.cap.b64
-# cat dumpfile.cap.b64
+# balena tunnel <uuid> -p 22222
+[Info]    Opening a tunnel to <uuid>...
+[Info]     - tunnelling localhost:22222 to <uuid>:22222
+[Info]    Waiting for connections...
 ```
 
-Then on your workstation, decode the scraped capture file.
+Then in another terminal:
 ```bash
-$ base64 -d dumpfile.cap.b64 >dumpfile.cap
+# scp -P 22222 <balena_user_slugname>@localhost:<absolutePathToFileOnDevice> <destination>
 ```
+After collecting the file, close those two terminals.
 
-Finally, remove the volume from the customer device.
+Finally, from the ssh terminal, remove the volume from the customer device.
 ```bash
 # balena volume rm supkit
 ```
