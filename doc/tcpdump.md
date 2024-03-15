@@ -20,7 +20,7 @@ Run tcpdump on the expected network interface, like 'eth0', or `any` for all int
 # tcpdump -U -s 0 -i any not port 22222 -w /data/dumpfile.cap
 ```
 
-After exiting the container, you can find the capture file in `/mnt/data/docker/volumes/supkit/_data`. If you use `balena ssh` to run this command on a device, use `balena tunnel` to collect the file, like in the example below.
+After exiting the container, you can find the capture file in `/mnt/data/docker/volumes/supkit/_data`. If you use `balena ssh` to run this command on a device, use `balena tunnel` and `scp` to collect the file, like in the example below.
 
 First open a new terminal, and enter this command.
 ```bash
