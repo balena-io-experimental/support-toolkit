@@ -4,7 +4,7 @@ Print/Write network packets. You can display output immediately on the terminal,
 
 ## Output to Terminal
 
-When running support-toolkit, must use parameter `net=host` to see host level packets, and must specify volume.
+When running support-toolkit, must use parameter `net=host` to see host level packets.
 ```bash
    balena run --rm -it --net=host kb2ma/support-toolkit
 ```
