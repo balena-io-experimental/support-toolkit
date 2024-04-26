@@ -21,7 +21,7 @@ To run the toolkit interactively from a bash shell:
 
 To execute a command directly, for example `lshw`:
 ```bash
-   balena run --rm kb2ma/support-toolkit --privileged -c "lshw -short"
+   balena run --rm --privileged kb2ma/support-toolkit -c "lshw -short"
 ```
 
 A particular tool may require host networking or privileged operation, like `lshw` in the example above. See the tool doc links above for specifics.
