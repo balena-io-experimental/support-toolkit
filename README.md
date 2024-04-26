@@ -1,5 +1,5 @@
 # Support Toolkit
-Provides tools containerized for balena device support, and available from a bash shell.
+Provides tools containerized for balena device support, available from a bash shell.
 
 ## Tools
 A tool name link is to local docs on how to run it in a support context for a balena device.
@@ -14,18 +14,17 @@ A tool name link is to local docs on how to run it in a support context for a ba
 
 ## Running
 
-A particular tool may require host networking or privileged operation. See the tool doc link above for specifics.
-
 To run the toolkit interactively from a bash shell:
 ```bash
-# balena run --rm --name supkit -it kb2ma/support-toolkit
+   balena run --rm -it kb2ma/support-toolkit
 ```
 
 To execute a command directly, for example `lshw`:
 ```bash
-# balena run --rm kb2ma/support-toolkit -c "lshw -short"
+   balena run --rm kb2ma/support-toolkit --privileged -c "lshw -short"
 ```
 
+A particular tool may require host networking or privileged operation, like `lshw` in the example above. See the tool doc links above for specifics.
 
 ## Development
 
