@@ -7,6 +7,7 @@ A tool name link is to local docs on how to run it in a support context for a ba
 | Tool | Description |
 | ---- | ----------- |
 | bash | Provides shell for the container |
+| bind-tools | DNS investigation tools |
 | [curl](doc/curl.md) | CLI for experimenting with many protocols |
 | [lshw](doc/lshw.md) | List hardware on device |
 | nano | Text editor with a command bar |

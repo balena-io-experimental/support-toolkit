@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache bash curl lshw nano nmap-ncat tcpdump
+RUN apk add --no-cache bash curl lshw nano nmap-ncat tcpdump bind-tools
 
 WORKDIR /app
 COPY doc doc
